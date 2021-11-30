@@ -1,0 +1,8 @@
+.card-wrapper {
+    width: 70%;
+    padding: 10%;
+    aspect-ratio: 3/4;
+    background-color: rgba(184, 183, 183, 0.5);
+    border-radius: 5%;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+}
