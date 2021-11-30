@@ -1,6 +1,7 @@
 {
   "hosting": {
     "public": "client/public",
+    "site": "ttravel-magshimim",
     "ignore": [
       "firebase.json",
       "**/.*",
