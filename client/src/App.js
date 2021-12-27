@@ -1,29 +1,32 @@
-import "./App.css";
-import Navbar from "./components/Navbar/Navbar";
-import Main from "./components/Main/Main";
+import Navbar from "./components/Navbar";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import SideBar from "./components/SideBar";
+import Dashboard from "./components/Dashboard";
 
 function App() {
     return (
-        <div className="App">
+        <div className="flex flex-col h-screen w-screen text-center text-primary overflow-hidden">
             <Router>
-                <div className="header">
+                <div className="w-screen">
                     <Navbar />
                 </div>
-                <div className="content">
-                  <Routes>
-                      <Route exact path="/" element={<Home />} />
-                      <Route exact path="/main" element={<Main />} />
-                      <Route exact path="/book" element={<Book />} />
-                      <Route exact path="/plan" element={<Plan />} />
-                      <Route exact path="/about" element={<About />} />
-                  </Routes>
+                <div className="flex flex-grow">
+                    <div>
+                        <SideBar />
+                    </div>
+                    <div className="absolute bottom-0 right-0 top-24 left-64 max-h-full max-w-full overflow-hidden">
+                        <Routes>
+                            <Route exact path="/" element={<Dashboard />} />
+                            <Route exact path="/book" element={<Book />} />
+                            <Route exact path="/plan" element={<Plan />} />
+                            <Route exact path="/about" element={<About />} />
+                        </Routes>
+                    </div>
                 </div>
             </Router>
         </div>
     );
 }
-
 const Home = () => {
     return (
         <div>
@@ -31,7 +34,6 @@ const Home = () => {
         </div>
     );
 };
-
 const Book = () => {
     return (
         <div>
@@ -39,7 +41,6 @@ const Book = () => {
         </div>
     );
 };
-
 const Plan = () => {
     return (
         <div>
@@ -47,7 +48,6 @@ const Plan = () => {
         </div>
     );
 };
-
 const About = () => {
     return (
         <div>
@@ -55,5 +55,4 @@ const About = () => {
         </div>
     );
 };
-
 export default App;

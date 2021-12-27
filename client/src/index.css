@@ -1,19 +1,39 @@
-html,
-body {
-  height: 100%;
-  margin: 0;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .centered-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .icon {
+    height: 1.5rem;
+    aspect-ratio: 1;
+  }
+
+  .centered-children>* {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .sidebar-icon {
+    @apply text-primary w-12 bg-accent aspect-square rounded-lg;
+  }
+
 }
 
 body {
+  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-#root {
-  height: 100%;
 }
 
 code {
