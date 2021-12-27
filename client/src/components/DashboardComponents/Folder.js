@@ -5,32 +5,34 @@ function Folder(props) {
     const defaultProps = {
         color: props.color || "#2FE6C8",
         name: props.name || "folder",
-        numberOfFiles: props.numberOfFiles || 15,
+        numberOfFiles: props.numberOfFiles || 12,
         size: props.size || 2,
         ...props,
     };
     return (
-        <div
-            className="h-36 w-40 px-4 pt-2 text-left space-y-4 rounded-lg relative"
-            style={{
-                backgroundColor: defaultProps.color + "10",
-            }}
-        >
+        <div>
             <div
-                className="w-full h-1 left-0 absolute bottom-[1px] -z-10"
+                className="h-40 w-40 px-4 py-2 text-left space-y-4 rounded-lg relative"
                 style={{
-                    boxShadow: "5px 15px 18px " + defaultProps.color,
-                    transform: "scale(.9)",
+                    backgroundColor: defaultProps.color + "10",
                 }}
-            />
-            <FolderIcon
-                className="h-12 aspect-square mb-2"
-                color={defaultProps.color}
-            />
-            <h2>Folder Name</h2>
-            <div className="flex items-center justify-between text-xs">
-                <p>15 files</p>
-                <p>size GB</p>
+            >
+                <div
+                    className="w-full h-1 left-0 absolute bottom-[1px] -z-10"
+                    style={{
+                        boxShadow: "5px 15px 18px " + defaultProps.color,
+                        transform: "scale(.9)",
+                    }}
+                />
+                <FolderIcon
+                    className="h-12 aspect-square mb-2"
+                    color={defaultProps.color}
+                />
+                <h2>{defaultProps.name}</h2>
+                <div className="flex items-center justify-between text-xs">
+                    <p>{defaultProps.numberOfFiles} files</p>
+                    <p>{defaultProps.size} GB</p>
+                </div>
             </div>
         </div>
     );

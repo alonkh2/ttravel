@@ -32,7 +32,7 @@ function SideBar(props) {
     };
     const progress = Math.round((defaultProps.used / defaultProps.all) * 100);
     return (
-        <div className="flex items-center justify-center flex-col h-full w-64 py-4 px-2 space-y-4 border-r-accent border-r-[1px]">
+        <div className="flex items-center justify-around flex-col h-full w-64 py-4 px-2 space-y-4 border-r-accent border-r-[1px]">
             <div className="grid grid-cols-2 grid-rows-3 w-full h-60 centered-children text-[0.7rem]">
                 <div>
                     <div className="sidebar-icon centered-div">
