@@ -1,9 +1,24 @@
+const express = require("express");
 const functions = require("firebase-functions");
+const admin = require("firebase-admin");
+const files = require("./files");
+const { response } = require("express");
 
-// // Create and Deploy Your First Cloud Functions
-// // https://firebase.google.com/docs/functions/write-firebase-functions
-//
-// exports.helloWorld = functions.https.onRequest((request, response) => {
-//   functions.logger.info("Hello logs!", {structuredData: true});
-//   response.send("Hello from Firebase!");
-// });
+admin.initializeApp();
+
+const app = express();
+
+app.get("/", (request, response) => {
+    // response.send("Hello world");
+    files.getFiles().then((files) => {
+        response.send(files);
+    });
+});
+
+app.post("/", (request, response) => {
+    // console.log(request);
+    files.addFile({ ...request.query, date: new Date() });
+    response.send("File added");
+});
+
+exports.myCloud = functions.https.onRequest(app);

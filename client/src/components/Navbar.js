@@ -4,6 +4,7 @@ import {
     ChevronDownIcon,
     SearchIcon,
 } from "@heroicons/react/outline";
+import { Link } from "react-router-dom";
 
 function Navbar(props) {
     const defaultProps = {
@@ -15,12 +16,14 @@ function Navbar(props) {
     const [search, setSearch] = useState("");
     return (
         <div className="grid grid-cols-2 lg:grid-cols-4 items-center w-full h-24 py-4 shadow-lg">
-            <div className="hidden lg:flex justify-start px-12 items-center space-x-4">
-                <div className="centered-div rounded-full bg-primary w-8 h-8 text-[#FFFFFF]">
-                    M
+            <Link to="/">
+                <div className="hidden lg:flex justify-start px-12 items-center space-x-4 cursor-pointer">
+                    <div className="centered-div rounded-full bg-primary w-8 h-8 text-[#FFFFFF]">
+                        M
+                    </div>
+                    <div className="text-primary font-semibold">MY CLOUD</div>
                 </div>
-                <div className="text-primary font-semibold">MY CLOUD</div>
-            </div>
+            </Link>
             <div className="col-span-2 centered-div space-x-4">
                 <div className="flex items-center justify-start text-left space-x-2 border-[1px] w-96 border-[#F0F0F0] py-3 px-4 rounded-lg">
                     <SearchIcon className="h-6 w-6" />
@@ -41,20 +44,22 @@ function Navbar(props) {
                 </div>
             </div>
             <div className="justify-center items-center space-x-4 hidden lg:flex">
-                <BellIcon className="h-6 w-6 text-purple-900" />
-                <div className="centered-div space-x-2">
-                    <img
-                        src={defaultProps.img}
-                        className="rounded-full h-10 aspect-square"
-                        alt="profile"
-                    />
-                    <div className="text-left">
-                        <p className="font-normal">{defaultProps.name}</p>
-                        <p className="text-xs text-secondary">
-                            {defaultProps.email}
-                        </p>
+                <BellIcon className="h-6 w-6 text-purple-900 cursor-pointer" />
+                <Link to="/login">
+                    <div className="centered-div space-x-2 cursor-pointer">
+                        <img
+                            src={defaultProps.img}
+                            className="rounded-full h-10 aspect-square"
+                            alt="profile"
+                        />
+                        <div className="text-left">
+                            <p className="font-normal">{defaultProps.name}</p>
+                            <p className="text-xs text-secondary">
+                                {defaultProps.email}
+                            </p>
+                        </div>
                     </div>
-                </div>
+                </Link>
             </div>
         </div>
     );

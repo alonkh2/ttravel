@@ -3,40 +3,39 @@
 @tailwind utilities;
 
 @layer components {
-  .centered-div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+    .centered-div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-  .icon {
-    height: 1.5rem;
-    aspect-ratio: 1;
-  }
+    .icon {
+        height: 1.5rem;
+        aspect-ratio: 1;
+    }
 
-  .centered-children>* {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+    .centered-children > * {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 
-  .sidebar-icon {
-    @apply text-primary w-12 bg-accent aspect-square rounded-lg;
-  }
-
+    .sidebar-icon {
+        @apply text-primary w-12 bg-accent aspect-square rounded-lg cursor-pointer;
+    }
 }
 
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+        "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+        monospace;
 }

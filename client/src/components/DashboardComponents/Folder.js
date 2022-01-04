@@ -1,4 +1,4 @@
-import { FolderIcon } from "@heroicons/react/solid";
+import { FolderIcon, DotsVerticalIcon } from "@heroicons/react/solid";
 import React from "react";
 
 function Folder(props) {
@@ -28,6 +28,7 @@ function Folder(props) {
                     className="h-12 aspect-square mb-2"
                     color={defaultProps.color}
                 />
+                <DotsVerticalIcon className="icon absolute top-5 right-1" />
                 <h2>{defaultProps.name}</h2>
                 <div className="flex items-center justify-between text-xs">
                     <p>{defaultProps.numberOfFiles} files</p>

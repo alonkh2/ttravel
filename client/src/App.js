@@ -11,13 +11,13 @@ function App() {
                     <Navbar />
                 </div>
                 <div className="flex flex-grow">
-                    <div>
+                    <div className="hidden lg:inline">
                         <SideBar />
                     </div>
-                    <div className="absolute bottom-0 right-0 top-24 left-64 max-h-full max-w-full overflow-hidden">
+                    <div className="absolute bottom-0 right-0 left-0 top-24 lg:left-64 max-h-full max-w-full overflow-hidden">
                         <Routes>
                             <Route exact path="/" element={<Dashboard />} />
-                            <Route exact path="/book" element={<Book />} />
+                            <Route exact path="/login" element={<Book />} />
                             <Route exact path="/plan" element={<Plan />} />
                             <Route exact path="/about" element={<About />} />
                         </Routes>
